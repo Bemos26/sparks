@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Close mobile menu when a link is clicked
-    const links = document.querySelectorAll('.nav-links a');
+    // 3. Close mobile menu when a link is clicked (unless it's the dropdown toggle)
+    const links = document.querySelectorAll('.nav-links a:not(.dropbtn)');
     links.forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Simple Smooth Scrolling for Anchor Links
-    // Note: CSS 'scroll-behavior: smooth' handles this in modern browsers, 
-    // but this JS adds an extra layer of control if needed.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -56,4 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Mobile Dropdown Toggle
+    const dropBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropBtn && dropdownContent) {
+        dropBtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    }
 });

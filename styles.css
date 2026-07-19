@@ -526,3 +526,102 @@ img {
     
     .hero-actions { flex-direction: column; }
 }
+
+/* ==========================================================================
+   DROPDOWN MENU
+   ========================================================================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--surface-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    border: 1px solid var(--surface-light);
+}
+
+.dropdown-content a {
+    color: var(--text-primary);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--surface-light);
+    color: var(--accent-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   HORIZONTAL MEDIA CAROUSEL
+   ========================================================================== */
+.media-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--surface-color);
+}
+
+.media-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.media-carousel::-webkit-scrollbar-track {
+    background: var(--surface-color);
+    border-radius: 4px;
+}
+
+.media-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.media-carousel .video-card {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
+}
+
+/* Page Headers for Instrument Pages */
+.page-header {
+    padding: 150px 20px 80px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--surface-light) 0%, var(--bg-color) 100%);
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
