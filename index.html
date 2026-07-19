@@ -135,8 +135,10 @@
                 
                 <!-- FORMSPREE CONTACT FORM PLACEHOLDER -->
                 <div class="contact-form-wrapper">
-                    <!-- TODO: Replace the 'action' URL with the actual Formspree endpoint URL provided when you create the form on formspree.io -->
-                    <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="1d06483f-66d4-4c90-8b9a-741d854e2569">
+                        
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
